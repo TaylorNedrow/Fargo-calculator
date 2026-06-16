@@ -956,8 +956,9 @@
           </div>
           <div class="player-actions">
             <div class="game-btns">
-              <button class="game-btn ${p.sel8?'active-8':''}" data-game="8" onclick="toggleGame('${p.id}',8)" title="8-Ball">8</button>
-              <button class="game-btn ${p.sel10?'active-10':''}" data-game="10" onclick="toggleGame('${p.id}',10)" title="10-Ball">10</button>
+              <button class="game-btn ${p.sel8?'active-8':''}" data-game="8" onclick="toggleGame('${p.id}',8)" title="8-Ball" ${p.unavailable?'disabled style="opacity:0.4;pointer-events:none;"':''}>8</button>
+              <button class="game-btn ${p.sel10?'active-10':''}" data-game="10" onclick="toggleGame('${p.id}',10)" title="10-Ball" ${p.unavailable?'disabled style="opacity:0.4;pointer-events:none;"':''}>10</button>
+              <button class="unavail-btn ${p.unavailable?'active':''}" onclick="toggleUnavailable('${p.id}')" title="${p.unavailable?'Mark available':'Mark unavailable'}">${p.unavailable?'Out':'Avail'}</button>
             </div>
             <button class="btn btn-danger btn-icon" onclick="removePlayer('${p.id}')" title="Remove">✕</button>
           </div>`;
